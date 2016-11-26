@@ -25,12 +25,14 @@ class ZalandoProducts extends ZalandoApi
      */
     public function fetchArticles($params=[])
     {
-        return $this->fetch('articles', 'get', $params);
+        $res = $this->fetch('articles', $params);
+        return json_decode($res, true);
     }
 
     public function fetchArticle($id, $params=[])
     {
-        return $this->fetch("articles/{$id}", 'get', $params);
+        $res = $this->fetch("articles/{$id}", $params);
+        return json_decode($res, true);
     }
 
     public function getBaseEndpoint()

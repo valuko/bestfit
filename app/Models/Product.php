@@ -22,7 +22,16 @@ class Product extends Model
         'data'
     ];
 
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category', 'products_in_categories');
+    }
+
     protected $guarded = [];
 
+    public function buildNeededData()
+    {
+        return json_decode($this->data, true);
+    }
         
 }

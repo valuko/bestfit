@@ -22,12 +22,12 @@ class ZalandoFilters extends ZalandoApi
 
     public function fetchFilters($params=[])
     {
-        return $this->fetch($this->base_endpoint, 'get', $params);
+        return $this->fetch($this->base_endpoint, $params);
     }
 
     public function fetchFilter($id, $params=[])
     {
-        return $this->fetch($this->base_endpoint.$id, 'get', $params);
+        return $this->fetch($this->base_endpoint.$id, $params);
     }
 
     public function getBaseEndpoint()

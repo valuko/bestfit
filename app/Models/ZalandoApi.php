@@ -22,12 +22,13 @@ abstract class ZalandoApi
         $this->client = new Client(['base_uri' => $this->base_uri, 'verify' => false]);
     }
 
-    protected function fetch($endpoint, $method, $params=[])
+    protected function fetch($endpoint, $params=[])
     {
-        $res = $this->client->request($method, $endpoint, $params);
+        //$res = $this->client->get($endpoint, $params);
+        $res = $this->client->get($endpoint, ['query' => $params]);
         $body = $res->getBody();
         // Should work... most of the times... I guess :)
-        return json_decode($body->__toString());
+        return $body->__toString();
     }
 
     abstract public function getBaseEndpoint();

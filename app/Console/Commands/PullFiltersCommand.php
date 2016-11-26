@@ -42,7 +42,7 @@ class PullFiltersCommand extends Command
     public function handle()
     {
 
-        $filtersList = ['sports'];
+        $filtersList = [];
 
         // Fetch categories from Zalando here... limit to just categories under men
         try {
