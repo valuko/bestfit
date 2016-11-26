@@ -27,6 +27,6 @@ class ZalandoCategories extends ZalandoApi
 
     public function fetchCategories($params=[])
     {
-        $this->fetch($this->base_endpoint, 'get', $params);
+        return $this->fetch($this->base_endpoint, 'get', $params);
     }
 }

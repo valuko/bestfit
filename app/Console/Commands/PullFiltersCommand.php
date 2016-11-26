@@ -42,7 +42,7 @@ class PullFiltersCommand extends Command
     public function handle()
     {
 
-        $filtersList = [];
+        $filtersList = ['sports'];
 
         // Fetch categories from Zalando here... limit to just categories under men
         try {
@@ -50,7 +50,8 @@ class PullFiltersCommand extends Command
             $results = $categories->fetchCategories([
                 'targetGroup' => 'men', 'name' => 'shoes'
             ]);
-            foreach ($results as $result) {
+
+            foreach ($results->content as $result) {
                 // insert and fetch filters
                 $cat = new Category([
                    'name' => $result->name, 'key'=>$result->key, 'filters'=>implode(',', $result->suggestedFilters),

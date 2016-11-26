@@ -17,6 +17,7 @@ class ZalandoFilters extends ZalandoApi
     public function __construct()
     {
         $this->base_endpoint = 'filters/';
+        parent::__construct();
     }
 
     public function fetchFilters($params=[])

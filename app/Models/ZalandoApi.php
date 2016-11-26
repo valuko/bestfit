@@ -25,7 +25,9 @@ abstract class ZalandoApi
     protected function fetch($endpoint, $method, $params=[])
     {
         $res = $this->client->request($method, $endpoint, $params);
-        return $res;
+        $body = $res->getBody();
+        // Should work... most of the times... I guess :)
+        return json_decode($body->__toString());
     }
 
     abstract public function getBaseEndpoint();
