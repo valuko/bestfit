@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Questions
 {
 
-    protected $base_uri = 'http://localhost:6000/questions/';
+    protected $base_uri = 'https://feel-n-find-decision-tree.herokuapp.com/questions/';
     protected $client;
 
     public function __construct()
