@@ -1,4 +1,4 @@
-# Feel'n'Find
+# FEEL'n'FIND
 
 Front end for the Feel'n'Find app.
 
